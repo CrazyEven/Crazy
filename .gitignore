@@ -28,5 +28,5 @@ hs_err_pid*
 /.svn
 /WebRoot/platformData/
 /index/
-/test
 /platformData
+/test/
