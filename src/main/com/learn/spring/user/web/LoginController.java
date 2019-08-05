@@ -1,8 +1,8 @@
-package learn.spring.user.web;
+package main.com.learn.spring.user.web;
 
-import learn.spring.user.domain.LoginCommand;
-import learn.spring.user.po.User;
-import learn.spring.user.service.UserService;
+import main.com.learn.spring.user.domain.LoginCommand;
+import main.com.learn.spring.user.po.User;
+import main.com.learn.spring.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;

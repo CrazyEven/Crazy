@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- ioc -->
+    <context:component-scan base-package="main.com.learn" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+
+    <!-- 数据源 -->
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/springdb?characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="zyf931125."/>
+    </bean>
+    <bean id="jdbcTemPlate" class="org.springframework.jdbc.core.JdbcTemplate"
+          p:dataSource-ref="dataSource"/>
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="interceptorPointCuts" expression="execution(* main.com.learn.spring.aop.impl.* (..))"/>-->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts"/>-->
+    <!--</aop:config>-->
+
+    <!--<bean id="greetingAdvice" class="main.com.learn.spring.aop.yuanma.advice.GreetingBeforeAdvice"/>-->
+    <!--<bean id="greetingAfterAdvice" class="main.com.learn.spring.aop.yuanma.advice.GreetingAfterReturningAdvice"/>-->
+    <!--<bean id="greetingAroundAdvice" class="main.com.learn.spring.aop.yuanma.advice.GreetingInterceptor"/>-->
+    <!--<bean id="target" class="main.com.learn.spring.aop.yuanma.NativeWaiter"/>-->
+
+    <!--&lt;!&ndash; p:proxyInterfaces="main.com.learn.spring.aop.yuanma.Waiter" JDK代理&ndash;&gt;-->
+    <!--&lt;!&ndash; p:proxyTargetClass = "true"  GGLib代理技术&ndash;&gt;-->
+    <!--<bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean"-->
+          <!--p:interceptorNames="greetingAroundAdvice"-->
+          <!--p:target-ref="target"-->
+    <!--/>-->
+
+</beans>

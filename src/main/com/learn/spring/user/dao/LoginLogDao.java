@@ -1,6 +1,6 @@
-package learn.spring.user.dao;
+package main.com.learn.spring.user.dao;
 
-import learn.spring.user.po.LoginLog;
+import main.com.learn.spring.user.po.LoginLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

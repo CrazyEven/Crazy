@@ -1,4 +1,4 @@
-package learn.spring.user.domain;
+package main.com.learn.spring.user.domain;
 
 public class LoginCommand {
     private String userNmae;

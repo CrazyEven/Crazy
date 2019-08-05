@@ -1,4 +1,4 @@
-package learn.spring.user.po;
+package main.com.learn.spring.user.po;
 
 import java.util.Date;
 

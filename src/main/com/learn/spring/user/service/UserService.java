@@ -1,9 +1,9 @@
-package learn.spring.user.service;
+package main.com.learn.spring.user.service;
 
-import learn.spring.user.dao.LoginLogDao;
-import learn.spring.user.dao.UserDao;
-import learn.spring.user.po.LoginLog;
-import learn.spring.user.po.User;
+import main.com.learn.spring.user.dao.LoginLogDao;
+import main.com.learn.spring.user.dao.UserDao;
+import main.com.learn.spring.user.po.LoginLog;
+import main.com.learn.spring.user.po.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
