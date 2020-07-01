@@ -20,7 +20,7 @@
     <org.hibernate.version>3.6.10.Final</org.hibernate.version>
     <hibernate-validator.version>4.1.0.Final</hibernate-validator.version>
     <org.springframework.version>4.2.8.RELEASE</org.springframework.version>
-    <mysql.version>5.1.6</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
     <aspectj.version>1.8.2</aspectj.version>
   </properties>
 
